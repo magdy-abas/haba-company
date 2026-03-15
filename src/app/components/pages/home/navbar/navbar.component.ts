@@ -1,4 +1,4 @@
-import { NgFor } from '@angular/common';
+﻿import { NgFor } from '@angular/common';
 import { Component, TemplateRef } from '@angular/core';
 import { NgbOffcanvas, NgbOffcanvasModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -10,15 +10,21 @@ import { NgbOffcanvas, NgbOffcanvasModule } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
-  constructor(private offcanvas: NgbOffcanvas) {}
+  readonly content = {
+    logoSrc: 'assets/images/logo.svg',
+    consultationLabel: 'استشارة مجانية',
+    closeIconClass: 'fa-solid fa-xmark',
+  };
 
-  menu = [
-    { title: 'الرئيســـية', link: '#' },
-    { title: 'من نحــــــن ', link: '#' },
-    { title: 'خـــــدماتنا', link: '#' },
-    { title: 'المــــدونـــة', link: '#' },
-    { title: ' تواصل معنا', link: '#' },
+  readonly menu = [
+    { title: 'الرئيسية', link: '#' },
+    { title: 'من نحن', link: '#' },
+    { title: 'خدماتنا', link: '#' },
+    { title: 'المدونة', link: '#' },
+    { title: 'تواصل معنا', link: '#' },
   ];
+
+  constructor(private offcanvas: NgbOffcanvas) {}
 
   openMenu(content: TemplateRef<any>) {
     this.offcanvas.open(content, {

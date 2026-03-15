@@ -1,29 +1,20 @@
 <section class="hero">
-
-
-
   <div class="hero-content">
-
-    <h1 class="hero-title">
-      نحــوّل الأعــمال مــن مشــاريع <br>تعــمل إلى منظـــومات تنمـــــو.
-    </h1>
+    <h1 class="hero-title" [innerHTML]="content.title"></h1>
 
     <!-- BLACK HOLE -->
-    <img src="assets/images/glow.png" class="hero-glow">
+    <img [src]="content.glowImage" class="hero-glow" alt="" />
 
-    <p class="hero-desc">
-      هبّة شركة تطوير أعمال متخصصة في هندسة منظومات النمو وتعظيم الإيرادات، نعمل مع الشركات لبناء أنظمة نمو قابلة للتوسع
-      وفق منهجية 16X. </p>
+    <p class="hero-desc">{{ content.description }}</p>
 
     <div class="hero-actions">
-      <button class="btn-outline-ui">
-        تعـــرف على هـــــبّة <i class="fa-solid fa-arrow-right-from-bracket"></i>
-      </button>
-      <button class="btn-primary">
-        تحدث مع فريق هــبّة <i class="fa-brands fa-whatsapp"></i>
+      <button
+        *ngFor="let action of actions"
+        [class]="action.buttonClass"
+        type="button"
+      >
+        {{ action.label }} <i [class]="action.iconClass"></i>
       </button>
     </div>
-
   </div>
-
 </section>

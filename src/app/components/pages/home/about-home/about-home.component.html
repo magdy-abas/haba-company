@@ -1,0 +1,31 @@
+﻿<section class="about-home" #aboutSection>
+  <div
+    class="about-home__grid"
+    [style.background-image]="'url(' + content.gridImage + ')'"
+  ></div>
+  <img class="about-home__star" [src]="content.starImage" alt="" />
+
+  <div class="about-home__inner">
+    <header class="about-home__header">
+      <h2 class="about-home__title">{{ content.title }}</h2>
+      <img class="about-home__underline" [src]="content.titleUnderline" alt="" />
+    </header>
+
+    <p class="about-home__description">
+      {{ content.description }}
+    </p>
+
+    <p class="about-home__lead">{{ content.lead }}</p>
+
+    <div class="about-home__pillars">
+      <article class="about-home__pillar" *ngFor="let pillar of pillars">
+        <span class="about-home__pillar-number">{{ pillar.number }}</span>
+        <h3 class="about-home__pillar-title">{{ pillar.title }}</h3>
+      </article>
+    </div>
+
+    <div class="about-home__visual">
+      <img class="about-home__glow" [src]="content.glowImage" alt="" />
+    </div>
+  </div>
+</section>

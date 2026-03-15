@@ -29,15 +29,15 @@
 }
 
 .left-bottom {
-  border-top: 1px solid #2a2a2a;
+  border-top: 1px solid var(--color-border);
 }
 
 /* CONSULT BUTTON */
 
 .consult-btn {
-  background: transparent;
-  border: 1px solid #444;
-  color: #fff;
+  background: var(--color-transparent);
+  border: 1px solid var(--color-border-light);
+  color: var(--color-text-main);
   padding: 8px 18px;
   border-radius: 10px;
   display: flex;
@@ -47,8 +47,8 @@
 }
 
 .consult-btn:hover {
-  border-color: #777;
-  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--color-border-hover);
+  background: var(--color-hover-bg);
 }
 .consult-btn i {
   transition: transform 0.25s ease;
@@ -75,18 +75,18 @@
   padding: 0;
 
   li a {
-    color: white;
+    color: var(--color-text-main);
     font-size: 15px;
   }
 }
 
 .menu-row.bottom {
-  border-top: 1px solid #2a2a2a;
+  border-top: 1px solid var(--color-border);
 }
 
 .menu-row li a {
   position: relative;
-  color: white;
+  color: var(--color-text-main);
   font-size: 17px;
   padding: 6px 4px;
   transition: color 0.3s ease;
@@ -102,7 +102,12 @@
   height: 2px;
   border-radius: 2px;
 
-  background: linear-gradient(90deg, transparent, #fff, transparent);
+  background: linear-gradient(
+    90deg,
+    var(--color-transparent),
+    var(--color-text-main),
+    var(--color-transparent)
+  );
 
   transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -114,7 +119,7 @@
   left: 0;
   width: 0;
   height: 6px;
-  background: rgba(255, 255, 255, 0.25);
+  background: var(--color-glow);
   filter: blur(6px);
   transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
   -webkit-transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
@@ -134,7 +139,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-left: 1px solid #2a2a2a;
+  border-left: 1px solid var(--color-border);
 }
 
 .logo-box img {
@@ -152,8 +157,8 @@
 
 .mobile-offcanvas {
   background: var(--color-bg-main);
-  color: white;
-  border-left: 1px solid #2a2a2a;
+  color: var(--color-text-main);
+  border-left: 1px solid var(--color-border);
 }
 
 .offcanvas-header {
@@ -161,7 +166,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 25px;
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid var(--color-bg-strong);
 }
 
 .mobile-logo {
@@ -172,7 +177,7 @@
 .close-btn {
   background: none;
   border: none;
-  color: white;
+  color: var(--color-text-main);
   font-size: 22px;
 }
 
@@ -182,11 +187,11 @@
 
   li {
     padding: 18px 25px;
-    border-bottom: 1px solid #1a1a1a;
+    border-bottom: 1px solid var(--color-bg-subtle);
   }
 
   a {
-    color: white;
+    color: var(--color-text-main);
     font-size: 16px;
   }
 }
@@ -226,9 +231,9 @@
   height: 40px;
 
   border-radius: 8px;
-  border: 1px solid #2a2a2a;
+  border: 1px solid var(--color-border);
 
-  background: transparent;
+  background: var(--color-transparent);
 
   display: flex;
   flex-direction: column;
@@ -243,7 +248,7 @@
 .mobile-toggle span {
   width: 18px;
   height: 2px;
-  background: #fff;
+  background: var(--color-text-main);
   border-radius: 2px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -252,7 +257,7 @@
 }
 
 .mobile-toggle:hover {
-  background: #111;
+  background: var(--color-bg-surface);
 }
 .mobile-toggle {
   justify-self: end;

@@ -83,7 +83,7 @@
 
 .hero-glow {
   width: 700px;
-  background: rgba(186, 156, 255, 0.04);
+  background: var(--color-accent-soft);
   filter: grayscale(100%);
 
   max-width: 90%;
@@ -112,7 +112,7 @@
 
 .hero-desc {
   font-size: 20px;
-  color: #ffff;
+  color: var(--color-text-main);
   line-height: 1.8;
   margin-top: 10px;
   margin-bottom: 35px;

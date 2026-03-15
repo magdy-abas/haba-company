@@ -2,6 +2,7 @@
 
 @import "@fortawesome/fontawesome-free/css/all.min.css";
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Readex+Pro:wght@700&display=swap");
 
 :root {
   color-scheme: dark;
@@ -12,18 +13,38 @@
   /* COLORS */
 
   --color-bg-main: #000;
+  --color-bg-navbar: var(--color-bg-main);
+  --color-bg-surface: #111;
+  --color-bg-subtle: #1a1a1a;
+  --color-bg-strong: #222;
+  --color-bg-button-primary: #e5e5e5;
+  --color-bg-button-primary-hover: #fff;
+  --color-surface-elevated: rgba(255, 255, 255, 0.03);
 
   --color-border: #2a2a2a;
   --color-border-light: #444;
   --color-border-hover: #777;
 
   --color-text-main: #ffffff;
+  --color-text-inverse: #000;
   --color-text-muted: #bdbdbd;
+  --color-text-stroke: #787878;
 
+  --color-transparent: transparent;
   --color-hover-bg: rgba(255, 255, 255, 0.05);
   --color-hover-soft: rgba(255, 255, 255, 0.08);
+  --color-shadow-soft: rgba(255, 255, 255, 0.12);
+  --color-shadow-subtle: rgba(255, 255, 255, 0.05);
+  --color-radial-glow: rgba(255, 255, 255, 0.22);
+  --color-grid-overlay: rgba(255, 255, 255, 0);
 
   --color-glow: rgba(255, 255, 255, 0.25);
+  --color-accent-soft: rgba(186, 156, 255, 0.04);
+
+  --main-title-size: clamp(34px, 5vw, 58px);
+  --section-spacing: clamp(90px, 12vw, 150px);
+  --section-width: min(1120px, calc(100% - 32px));
+  --font-outline-display: "Readex Pro", sans-serif;
 }
 
 *,
@@ -59,8 +80,8 @@ a {
 /* PRIMARY BUTTON */
 
 .btn-primary {
-  background: #e5e5e5;
-  color: #000;
+  background: var(--color-bg-button-primary);
+  color: var(--color-text-inverse);
   border: none;
   padding: 12px 22px;
   border-radius: 10px;
@@ -73,16 +94,16 @@ a {
 }
 
 .btn-primary:hover {
-  background: #fff;
+  background: var(--color-bg-button-primary-hover);
   transform: translateY(-2px);
 }
 
 /* OUTLINE BUTTON */
 
 .btn-outline-ui {
-  background: transparent;
-  border: 1px solid #444;
-  color: #fff;
+  background: var(--color-transparent);
+  border: 1px solid var(--color-border-light);
+  color: var(--color-text-main);
   padding: 12px 22px;
   border-radius: 10px;
   font-size: 16px;
@@ -94,8 +115,8 @@ a {
 }
 
 .btn-outline-ui:hover {
-  border-color: #777;
-  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--color-border-hover);
+  background: var(--color-hover-bg);
   transform: translateY(-2px);
 }
 
@@ -105,14 +126,14 @@ a {
 }
 .mobile-offcanvas {
   background: var(--color-bg-main) !important;
-  color: white;
+  color: var(--color-text-main);
   width: 70vw;
   max-width: 420px;
-  border-right: 1px solid #2a2a2a;
+  border-right: 1px solid var(--color-border);
 }
 
 .mobile-offcanvas .offcanvas-header {
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid var(--color-bg-strong);
 }
 
 .mobile-offcanvas .offcanvas-body {
