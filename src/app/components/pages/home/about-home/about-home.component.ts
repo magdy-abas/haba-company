@@ -95,10 +95,10 @@ export class AboutHomeComponent implements AfterViewInit, OnDestroy {
           '.about-home__pillar',
           {
             opacity: 0,
-            y: 34,
-            scale: 0.96,
-            duration: 0.7,
-            stagger: 0.12,
+            y: 42,
+            scale: 0.94,
+            duration: 1.05,
+            stagger: 0.18,
           },
           '-=0.2',
         )

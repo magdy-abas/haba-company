@@ -25,10 +25,10 @@
 
 .about-home__star {
   position: absolute;
-  top: 28px;
+  top: 150px;
   right: clamp(20px, 7vw, 90px);
-  width: clamp(120px, 16vw, 210px);
-  opacity: 0.42;
+  width: clamp(120px, 16vw, 400px);
+  opacity: 1;
   pointer-events: none;
 }
 
@@ -78,6 +78,7 @@
   width: min(840px, 100%);
   margin: 0 auto;
   isolation: isolate;
+  z-index: 50;
 }
 
 .about-home__pillars::before {
@@ -129,7 +130,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
   min-height: 76px;
   padding: 16px 28px;
   border: 1px solid var(--color-border-light);
@@ -224,7 +225,7 @@
   );
   filter: blur(50px);
   opacity: 0.55;
-  z-index: -1;
+  z-index: -50;
 }
 
 .about-home__glow {
@@ -333,5 +334,13 @@
     margin-top: 6px;
     margin-right: -20%;
     margin-left: -20%;
+    justify-self: center;
+    top: 55px;
+  }
+}
+@media (max-width: 450px) {
+  .about-home__visual {
+    margin-top: 12px;
+    top: 80px;
   }
 }
