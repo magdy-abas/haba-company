@@ -148,6 +148,20 @@
     width: 900px;
   }
 }
+
+@media (max-width: 450px) {
+  .hero {
+    align-items: start;
+    margin-top: 50px;
+
+    .hero-actions button {
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 12px;
+    }
+  }
+}
+
 .hero-title,
 .hero-desc,
 .hero-actions,

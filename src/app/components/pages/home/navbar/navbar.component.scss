@@ -213,7 +213,14 @@
     border: none;
   }
 }
-
+@media (max-width: 450px) {
+  .logo-box {
+    justify-content: right;
+  }
+  .logo-box img {
+    height: 30px;
+  }
+}
 .mobile-toggle {
   width: 40px;
   height: 40px;
