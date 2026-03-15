@@ -1,6 +1,7 @@
 ﻿<section
   class="philosophy-home"
   #philosophySection
+  [style.--grid-image]="'url(' + content.gridImage + ')'"
   [style.--person-image]="'url(' + content.personImage + ')'"
 >
   <div class="philosophy-home__inner">
@@ -19,5 +20,7 @@
         </div>
       </div>
     </div>
+
+    <div class="philosophy-home__tail" aria-hidden="true"></div>
   </div>
 </section>

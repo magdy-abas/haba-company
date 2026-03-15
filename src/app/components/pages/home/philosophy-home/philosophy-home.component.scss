@@ -8,6 +8,29 @@
   margin: 0 auto;
 }
 
+.philosophy-home__tail {
+  position: relative;
+  height: clamp(84px, 10vw, 140px);
+  margin-top: -18px;
+  background-image: var(--grid-image);
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.72;
+}
+
+.philosophy-home__tail::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    var(--color-bg-main) 0%,
+    var(--color-grid-overlay) 58%,
+    var(--color-bg-main) 100%
+  );
+}
+
 .philosophy-home__card {
   position: relative;
   min-height: 640px;
@@ -27,10 +50,11 @@
     linear-gradient(
       90deg,
       var(--color-overlay-heavy) 0%,
-      var(--color-overlay-panel-strong) 10%,
-      var(--color-overlay-panel-mid) 26%,
-      var(--color-overlay-panel-faint) 46%,
-      var(--color-grid-overlay) 78%,
+      var(--color-overlay-panel-strong) 8%,
+      var(--color-overlay-panel-mid) 22%,
+      var(--color-overlay-panel-faint) 36%,
+      var(--color-overlay-panel-clear) 52%,
+      var(--color-grid-overlay) 66%,
       var(--color-grid-overlay) 100%
     ),
     linear-gradient(
@@ -49,7 +73,7 @@
   background-size:
     auto,
     auto,
-    max(84vw, 1120px) auto;
+    max(85vw, 1000px) auto;
   filter: saturate(0.72) brightness(0.72);
   -webkit-mask-image: linear-gradient(
     180deg,
@@ -159,6 +183,10 @@
     transparent 100%
   );
   box-shadow: inset 0 1px 0 var(--color-shadow-soft);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
 }
 
 .philosophy-home__item-icon {
@@ -174,6 +202,10 @@
     var(--color-grid-overlay) 68%
   );
   box-shadow: 0 0 24px var(--color-icon-glow);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
 }
 
 .philosophy-home__item-title {
@@ -182,6 +214,43 @@
   font-size: clamp(18px, 1.6vw, 28px);
   line-height: 1.4;
   font-weight: 400;
+  transition:
+    transform 0.3s ease,
+    letter-spacing 0.3s ease;
+}
+
+.philosophy-home__item:hover {
+  transform: translateY(-3px);
+  background:
+    linear-gradient(
+      90deg,
+      var(--color-grid-overlay) 8%,
+      var(--color-hover-soft) 34%,
+      var(--color-panel-solid) 100%
+    ),
+    linear-gradient(
+      180deg,
+      var(--color-item-glass) 0%,
+      var(--color-grid-overlay) 100%
+    );
+  box-shadow:
+    inset 0 1px 0 var(--color-glow),
+    0 10px 28px var(--color-shadow-subtle);
+}
+
+.philosophy-home__item:hover .philosophy-home__item-icon {
+  transform: scale(1.06);
+  background: radial-gradient(
+    circle,
+    var(--color-glow) 0%,
+    var(--color-grid-overlay) 72%
+  );
+  box-shadow: 0 0 34px var(--color-icon-glow);
+}
+
+.philosophy-home__item:hover .philosophy-home__item-title {
+  transform: translateX(-2px);
+  letter-spacing: 0.2px;
 }
 
 @media (max-width: 992px) {
@@ -218,7 +287,7 @@
     background-size:
       auto,
       auto,
-      max(94vw, 900px) auto;
+      max(102vw, 980px) auto;
   }
 
   .philosophy-home__content {
@@ -256,7 +325,7 @@
     background-repeat: no-repeat;
     background-size:
       auto,
-      max(118vw, 620px) auto;
+      max(124vw, 680px) auto;
   }
 
   .philosophy-home__content {
@@ -292,5 +361,11 @@
 
   .philosophy-home__item-title {
     font-size: 16px;
+  }
+
+  .philosophy-home__tail {
+    height: 92px;
+    margin-top: -8px;
+    background-size: 170% auto;
   }
 }
