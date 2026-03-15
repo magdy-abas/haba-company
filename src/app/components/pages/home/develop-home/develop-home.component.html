@@ -1,0 +1,62 @@
+<section class="develop-home" #developSection>
+  <div class="develop-home__inner">
+    <header class="develop-home__header">
+      <h2 class="develop-home__title">{{ content.title }}</h2>
+      <p class="develop-home__description">{{ content.description }}</p>
+    </header>
+
+    <img class="develop-home__cube" [src]="content.cubeImage" alt="" />
+
+    <div class="develop-home__rows">
+      <div class="develop-home__row develop-home__row--top">
+        <article class="develop-home__card" *ngFor="let card of topRow" [ngClass]="card.tone.split(' ')">
+          <div class="develop-home__card-top">
+            <span class="develop-home__number" *ngIf="card.number">
+              {{ card.number }}
+            </span>
+
+            <div class="develop-home__icon" *ngIf="card.iconClass">
+              <i [class]="card.iconClass"></i>
+            </div>
+          </div>
+
+          <div class="develop-home__card-body">
+            <div class="develop-home__gradient-box" *ngIf="card.tone.includes('gradient')">
+              <img [src]="content.gradientImage" alt="" />
+            </div>
+
+            <div class="develop-home__text">
+              <h3 class="develop-home__card-title">{{ card.title }}</h3>
+              <p class="develop-home__card-description">{{ card.description }}</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="develop-home__row develop-home__row--bottom">
+        <article class="develop-home__card" *ngFor="let card of bottomRow" [ngClass]="card.tone.split(' ')">
+          <div class="develop-home__card-top">
+            <span class="develop-home__number" *ngIf="card.number">
+              {{ card.number }}
+            </span>
+
+            <div class="develop-home__icon" *ngIf="card.iconClass">
+              <i [class]="card.iconClass"></i>
+            </div>
+          </div>
+
+          <div class="develop-home__card-body">
+            <div class="develop-home__gradient-box" *ngIf="card.tone.includes('gradient')">
+              <img [src]="content.gradientImage" alt="" />
+            </div>
+
+            <div class="develop-home__text">
+              <h3 class="develop-home__card-title">{{ card.title }}</h3>
+              <p class="develop-home__card-description">{{ card.description }}</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>

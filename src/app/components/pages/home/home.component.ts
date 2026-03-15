@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AboutHomeComponent } from './about-home/about-home.component';
+import { DevelopHomeComponent } from './develop-home/develop-home.component';
 import { PhilosophyHomeComponent } from './philosophy-home/philosophy-home.component';
 import { SynergyHomeComponent } from './synergy-home/synergy-home.component';
 import { TransformHomeComponent } from './transform-home/transform-home.component';
@@ -16,6 +17,7 @@ import { HeroComponent } from './hero/hero.component';
     TransformHomeComponent,
     PhilosophyHomeComponent,
     SynergyHomeComponent,
+    DevelopHomeComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
