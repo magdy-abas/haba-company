@@ -11,9 +11,7 @@
       <img class="about-home__underline" [src]="content.titleUnderline" alt="" />
     </header>
 
-    <p class="about-home__description">
-      {{ content.description }}
-    </p>
+    <p class="about-home__description" [innerHTML]="content.description"></p>
 
     <p class="about-home__lead">{{ content.lead }}</p>
 

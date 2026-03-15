@@ -40,6 +40,15 @@
 
   --color-glow: rgba(255, 255, 255, 0.25);
   --color-accent-soft: rgba(186, 156, 255, 0.04);
+  --color-gold-soft: rgba(198, 166, 106, 0.08);
+  --color-gold-glow: rgba(214, 184, 123, 0.18);
+  --color-gold-line: rgba(229, 204, 156, 0.3);
+  --color-overlay-heavy: rgba(0, 0, 0, 0.94);
+  --color-overlay-strong: rgba(0, 0, 0, 0.92);
+  --color-overlay-medium: rgba(0, 0, 0, 0.76);
+  --color-overlay-soft: rgba(0, 0, 0, 0.62);
+  --color-overlay-faint: rgba(0, 0, 0, 0.35);
+  --color-overlay-clear: rgba(0, 0, 0, 0.2);
 
   --main-title-size: clamp(34px, 5vw, 58px);
   --section-spacing: clamp(90px, 12vw, 150px);

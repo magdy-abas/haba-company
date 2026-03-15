@@ -27,7 +27,7 @@ export class AboutHomeComponent implements AfterViewInit, OnDestroy {
   readonly content = {
     title: ' عــن هـــــبّة..',
     description:
-      'هبّة شركة تطوير أعمال متخصصة في النمو المالي وتعظيم الإيرادات نساعد الشركات على إعادة تصميم نموذجها الربحي، وضبط معادلة الإيرادات، وبناء منظومة نمو قابلة للتوسع.',
+      'هبّة شركة تطوير أعمال متخصصة في <span class="about-home__description-emphasis">النمو المالي وتعظيم الإيرادات</span> نساعد الشركات على إعادة تصميم نموذجها الربحي، وضبط معادلة الإيرادات، وبناء منظومة نمو قابلة للتوسع.',
     lead: 'نركز تحديدًا على تعظيم الإيرادات ورفع قابلية التوسع من خلال:',
     titleUnderline: 'assets/images/about-Vector.png',
     starImage: 'assets/images/Big-star.svg.png',

@@ -1,0 +1,132 @@
+.transform-home__inner {
+  width: var(--section-width);
+  margin: 0 auto;
+}
+
+.transform-home__card {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-bg-main);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 110% auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 26px;
+  isolation: isolate;
+  border-radius: 24px;
+}
+
+.transform-home__card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      var(--color-overlay-strong) 0%,
+      var(--color-overlay-soft) 22%,
+      var(--color-overlay-faint) 52%,
+      var(--color-overlay-medium) 100%
+    ),
+    linear-gradient(
+      90deg,
+      var(--color-overlay-heavy) 0%,
+      var(--color-overlay-clear) 18%,
+      var(--color-overlay-clear) 82%,
+      var(--color-overlay-heavy) 100%
+    ),
+    linear-gradient(
+      180deg,
+      var(--color-grid-overlay) 0%,
+      var(--color-gold-soft) 55%,
+      var(--color-grid-overlay) 100%
+    );
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+.transform-home__card::after {
+  content: "";
+  position: absolute;
+  inset: auto 10% -22%;
+  height: 52%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    var(--color-gold-soft) 0%,
+    var(--color-grid-overlay) 70%
+  );
+  filter: blur(32px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.transform-home__card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.transform-home__eyebrow {
+  margin: 0;
+  color: var(--color-text-main);
+  font-size: clamp(18px, 1.7vw, 30px);
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+.transform-home__title {
+  margin: 0;
+  color: var(--color-text-main);
+  font-size: clamp(32px, 4.3vw, 44px);
+  line-height: 1.55;
+  font-weight: 700;
+}
+
+.transform-home__title-line {
+  display: block;
+}
+
+@media (max-width: 992px) {
+  .transform-home__card {
+    min-height: 300px;
+    gap: 22px;
+  }
+
+  .transform-home__eyebrow {
+    font-size: clamp(16px, 2vw, 24px);
+  }
+
+  .transform-home__title {
+    font-size: clamp(26px, 4vw, 46px);
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 768px) {
+  .transform-home {
+    padding-bottom: calc(var(--section-spacing) * 0.8);
+  }
+
+  .transform-home__card {
+    min-height: 250px;
+    padding: 34px 16px;
+    border-radius: 20px;
+    gap: 18px;
+    background-position: center bottom;
+    background-size: cover;
+  }
+
+  .transform-home__eyebrow {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .transform-home__title {
+    font-size: clamp(21px, 7vw, 32px);
+    line-height: 1.85;
+  }
+}

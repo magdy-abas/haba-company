@@ -1,0 +1,19 @@
+﻿<section class="transform-home" #transformSection>
+  <div class="transform-home__inner">
+    <div
+      class="transform-home__card"
+      [style.background-image]="'url(' + content.gridImage + ')'"
+    >
+      <p class="transform-home__eyebrow">{{ content.eyebrow }}</p>
+
+      <h2 class="transform-home__title">
+        <span class="transform-home__title-line">
+          {{ content.titleFirstLine }}
+        </span>
+        <span class="transform-home__title-line">
+          {{ content.titleSecondLine }}
+        </span>
+      </h2>
+    </div>
+  </div>
+</section>
