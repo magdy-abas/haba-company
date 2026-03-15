@@ -1,0 +1,23 @@
+﻿<section
+  class="philosophy-home"
+  #philosophySection
+  [style.--person-image]="'url(' + content.personImage + ')'"
+>
+  <div class="philosophy-home__inner">
+    <div class="philosophy-home__card">
+      <div class="philosophy-home__content">
+        <h2 class="philosophy-home__title">{{ content.title }}</h2>
+        <p class="philosophy-home__description">
+          {{ content.description }}
+        </p>
+
+        <div class="philosophy-home__list">
+          <article class="philosophy-home__item" *ngFor="let pillar of pillars">
+            <img class="philosophy-home__item-icon" [src]="pillar.icon" alt="" />
+            <h3 class="philosophy-home__item-title">{{ pillar.title }}</h3>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
