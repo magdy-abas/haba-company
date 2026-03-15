@@ -1,0 +1,86 @@
+<nav class="main-navbar">
+
+  <div class="navbar-grid">
+
+
+
+    <!-- RIGHT LOGO -->
+    <div class="logo-box">
+      <img src="assets/images/logo.svg">
+    </div>
+
+    <!-- CENTER MENU -->
+    <div class="menu-box">
+
+      <ul class="menu-row">
+        <li *ngFor="let item of menu.slice(0,3)">
+          <a>{{item.title}}</a>
+        </li>
+      </ul>
+
+      <ul class="menu-row bottom">
+        <li *ngFor="let item of menu.slice(3)">
+          <a>{{item.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+
+    <!-- LEFT SIDE -->
+    <div class="left-section">
+
+      <!-- consultation top -->
+      <div class="consult-box">
+        <button class="consult-btn">
+          <i class="fa-brands fa-whatsapp"></i>
+          استشارة مجانية
+        </button>
+      </div>
+
+      <!-- empty bottom space -->
+      <div class="left-bottom"></div>
+
+    </div>
+
+    <!-- MOBILE BUTTON -->
+    <button class="mobile-toggle d-lg-none" (click)="openMenu(mobileMenu)">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+
+</nav>
+
+
+<!-- OFFCANVAS -->
+
+<ng-template #mobileMenu let-offcanvas>
+
+  <div class="offcanvas-header">
+
+    <img src="assets/images/logo.svg" class="mobile-logo">
+
+    <button class="close-btn" (click)="offcanvas.dismiss()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+  </div>
+
+  <div class="offcanvas-body">
+
+    <ul class="mobile-menu">
+
+      <li *ngFor="let item of menu">
+        <a (click)="offcanvas.dismiss()">
+          {{item.title}}
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+
+</ng-template>

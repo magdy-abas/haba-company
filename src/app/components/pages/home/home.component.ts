@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
+import { NavbarComponent } from './navbar/navbar.component';
 
+import { HeroComponent } from './hero/hero.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [NavbarComponent, HeroComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
-export class HomeComponent {
-
-}
+export class HomeComponent {}

@@ -1,0 +1,156 @@
+.hero {
+  position: relative;
+  min-height: calc(100vh - 90px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* bottom mask */
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-position: center bottom -40px;
+
+  background-image: url("../../../../../assets/images/mask-bottom.png.png");
+  background-repeat: no-repeat;
+  background-position: center bottom -193px;
+  background-size: contain;
+
+  opacity: 0.35;
+
+  pointer-events: none;
+}
+
+/* top mask */
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("../../../../../assets/images/mask-top.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain;
+
+  opacity: 0.35;
+
+  pointer-events: none;
+}
+
+/* content فوق كل حاجة */
+
+.hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* BACKGROUND GRID */
+
+.hero-mask {
+  position: absolute;
+  bottom: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1600px;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+/* CONTENT */
+
+.hero-content {
+  position: relative;
+  max-width: 900px;
+  z-index: 2;
+}
+
+/* TITLE */
+
+.hero-title {
+  font-size: clamp(42px, 5vw, 64px);
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+/* BLACK HOLE */
+
+.hero-glow {
+  width: 700px;
+  background: rgba(186, 156, 255, 0.04);
+  filter: grayscale(100%);
+
+  max-width: 90%;
+  margin: 0 auto;
+  display: block;
+  opacity: 0.8;
+  animation: glowPulse 6s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+    -webkit-transform: scale(1.08);
+    -moz-transform: scale(1.08);
+    -ms-transform: scale(1.08);
+    -o-transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* DESCRIPTION */
+
+.hero-desc {
+  font-size: 20px;
+  color: #ffff;
+  line-height: 1.8;
+  margin-top: 10px;
+  margin-bottom: 35px;
+}
+
+/* BUTTONS */
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 0 20px;
+  }
+
+  .hero-title {
+    font-size: 30px;
+  }
+
+  .hero-glow {
+    width: 300px;
+  }
+
+  .hero-desc {
+    font-size: 15px;
+  }
+
+  .hero-mask {
+    width: 900px;
+  }
+}
+.hero-title,
+.hero-desc,
+.hero-actions,
+.hero-glow {
+  will-change: transform, opacity;
+}

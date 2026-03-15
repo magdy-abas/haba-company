@@ -1,1 +1,124 @@
-/* You can add global styles to this file, and also import other style files */
+//global styles
+
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap");
+
+:root {
+  color-scheme: dark;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+}
+
+:root {
+  /* COLORS */
+
+  --color-bg-main: #000;
+
+  --color-border: #2a2a2a;
+  --color-border-light: #444;
+  --color-border-hover: #777;
+
+  --color-text-main: #ffffff;
+  --color-text-muted: #bdbdbd;
+
+  --color-hover-bg: rgba(255, 255, 255, 0.05);
+  --color-hover-soft: rgba(255, 255, 255, 0.08);
+
+  --color-glow: rgba(255, 255, 255, 0.25);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--color-bg-main);
+  height: 5000px;
+}
+.logo img {
+  filter: invert(1);
+}
+
+body {
+  overflow-x: hidden;
+  color: var(--color-text-main);
+
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  direction: rtl;
+}
+//global styles
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* PRIMARY BUTTON */
+
+.btn-primary {
+  background: #e5e5e5;
+  color: #000;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.btn-primary:hover {
+  background: #fff;
+  transform: translateY(-2px);
+}
+
+/* OUTLINE BUTTON */
+
+.btn-outline-ui {
+  background: transparent;
+  border: 1px solid #444;
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.btn-outline-ui:hover {
+  border-color: #777;
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+// offcanvas- navbar
+.offcanvas-end {
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-offcanvas {
+  background: var(--color-bg-main) !important;
+  color: white;
+  width: 70vw;
+  max-width: 420px;
+  border-right: 1px solid #2a2a2a;
+}
+
+.mobile-offcanvas .offcanvas-header {
+  border-bottom: 1px solid #222;
+}
+
+.mobile-offcanvas .offcanvas-body {
+  padding: 0;
+}
+
+.offcanvas {
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}

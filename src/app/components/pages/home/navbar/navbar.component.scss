@@ -1,0 +1,252 @@
+.main-navbar {
+  background: var(--color-bg-navbar);
+  border: 1px solid var(--color-border);
+  border-radius: 22px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+/* GRID */
+
+.navbar-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr 220px;
+}
+
+/* LEFT */
+
+.left-section {
+  display: grid;
+  grid-template-rows: 55px 60px;
+}
+
+.consult-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-bottom {
+  border-top: 1px solid #2a2a2a;
+}
+
+/* CONSULT BUTTON */
+
+.consult-btn {
+  background: transparent;
+  border: 1px solid #444;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 10px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  transition: all 0.25s ease;
+}
+
+.consult-btn:hover {
+  border-color: #777;
+  background: rgba(255, 255, 255, 0.05);
+}
+.consult-btn i {
+  transition: transform 0.25s ease;
+}
+
+.consult-btn:hover i {
+  transform: translateX(-2px);
+}
+
+/* MENU */
+
+.menu-box {
+  display: grid;
+  grid-template-rows: 55px 60px;
+}
+
+.menu-row {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  margin: 0;
+  padding: 0;
+
+  li a {
+    color: white;
+    font-size: 15px;
+  }
+}
+
+.menu-row.bottom {
+  border-top: 1px solid #2a2a2a;
+}
+
+.menu-row li a {
+  position: relative;
+  color: white;
+  font-size: 17px;
+  padding: 6px 4px;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.menu-row li a::before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+
+  background: linear-gradient(90deg, transparent, #fff, transparent);
+
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-row li a::after {
+  content: "";
+  position: absolute;
+  bottom: -9px;
+  left: 0;
+  width: 0;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.25);
+  filter: blur(6px);
+  transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  -webkit-transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  -moz-transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  -ms-transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  -o-transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.menu-row li a:hover::before,
+.menu-row li a:hover::after {
+  width: 100%;
+}
+
+/* LOGO */
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid #2a2a2a;
+}
+
+.logo-box img {
+  height: 60px;
+  filter: brightness(0) invert(1);
+}
+
+/* MOBILE */
+
+.mobile-toggle {
+  display: none;
+}
+
+/* OFFCANVAS */
+
+.mobile-offcanvas {
+  background: var(--color-bg-main);
+  color: white;
+  border-left: 1px solid #2a2a2a;
+}
+
+.offcanvas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  border-bottom: 1px solid #222;
+}
+
+.mobile-logo {
+  height: 35px;
+  filter: invert(1);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+}
+
+.mobile-menu {
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding: 18px 25px;
+    border-bottom: 1px solid #1a1a1a;
+  }
+
+  a {
+    color: white;
+    font-size: 16px;
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 992px) {
+  .navbar-grid {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  .left-section,
+  .menu-box {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
+  .logo-box {
+    border: none;
+  }
+}
+
+.mobile-toggle {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 8px;
+  border: 1px solid #2a2a2a;
+
+  background: transparent;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 4px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.mobile-toggle span {
+  width: 18px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+}
+
+.mobile-toggle:hover {
+  background: #111;
+}
+.mobile-toggle {
+  justify-self: end;
+}
