@@ -3,6 +3,7 @@
 }
 
 .synergy-home__inner {
+  position: relative;
   width: 100%;
   min-height: clamp(260px, 34vw, 420px);
   padding: clamp(42px, 6vw, 78px)
@@ -12,6 +13,13 @@
   justify-content: center;
   text-align: center;
   background-color: var(--color-bg-main);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.synergy-home__background {
+  position: absolute;
+  inset: 0;
   background-image:
     linear-gradient(
       90deg,
@@ -34,10 +42,12 @@
   background-position: center, center, center, center;
   background-repeat: no-repeat;
   background-size: auto, auto, auto, cover;
-  overflow: hidden;
+  z-index: 0;
 }
 
 .synergy-home__title {
+  position: relative;
+  z-index: 1;
   margin: 0;
   color: var(--color-text-main);
   font-size: clamp(30px, 4.7vw, 62px);
@@ -58,6 +68,9 @@
   .synergy-home__inner {
     min-height: 220px;
     padding: 34px 16px;
+  }
+
+  .synergy-home__background {
     background-position:
       center,
       center,

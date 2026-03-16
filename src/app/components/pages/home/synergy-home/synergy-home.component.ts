@@ -56,18 +56,20 @@ export class SynergyHomeComponent implements AfterViewInit, OnDestroy {
         .from('.synergy-home__background', {
           opacity: 0,
           yPercent: 14,
-          duration: 1,
+          scale: 1.03,
+          filter: 'blur(10px)',
+          duration: 1.05,
         })
         .from(
           '.synergy-home__line',
           {
             opacity: 0,
-            y: 28,
-            filter: 'blur(8px)',
+            y: 24,
+            filter: 'blur(7px)',
             duration: 0.8,
             stagger: 0.14,
           },
-          '-=0.3',
+          '-=0.28',
         );
     }, this.synergySection.nativeElement);
   }
