@@ -96,23 +96,26 @@
   pointer-events: none;
   z-index: 0;
 }
+
 .philosophy-home__card::after {
-  background-attachment: fixed;
+  animation: bgMove 20s linear infinite;
 }
 
-// .philosophy-home__card::after {
-//   animation: bgMove 20s linear infinite;
-// }
+@keyframes bgMove {
+  0% {
+    background-position:
+      center,
+      center,
+      left top;
+  }
 
-// @keyframes bgMove {
-//   0% {
-//     background-position: center, center, left top;
-//   }
-
-//   100% {
-//     background-position: center, center, left -120px;
-//   }
-// }
+  100% {
+    background-position:
+      center,
+      center,
+      left -120px;
+  }
+}
 .philosophy-home__content {
   position: relative;
   z-index: 1;
