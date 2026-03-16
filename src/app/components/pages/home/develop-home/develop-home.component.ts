@@ -80,7 +80,7 @@ export class DevelopHomeComponent implements AfterViewInit, OnDestroy {
     this.animationContext = gsap.context(() => {
       const timeline = gsap.timeline({
         defaults: {
-          ease: 'power3.out',
+          ease: 'power4.out',
         },
         scrollTrigger: {
           trigger: this.developSection.nativeElement,
@@ -92,39 +92,42 @@ export class DevelopHomeComponent implements AfterViewInit, OnDestroy {
       timeline
         .from('.develop-home__cube', {
           opacity: 0,
-          scale: 0.75,
+          scale: 0.68,
           rotate: -10,
-          duration: 0.75,
+          y: 22,
+          duration: 1.05,
         })
         .from(
           '.develop-home__header',
           {
             opacity: 0,
-            y: 24,
-            filter: 'blur(8px)',
-            duration: 0.8,
+            y: 34,
+            filter: 'blur(12px)',
+            duration: 1,
           },
-          '-=0.35',
+          '-=0.55',
         )
         .from(
           '.develop-home__row--top .develop-home__card',
           {
             opacity: 0,
-            y: 28,
-            duration: 0.7,
-            stagger: 0.12,
+            y: 40,
+            filter: 'blur(10px)',
+            duration: 0.95,
+            stagger: 0.16,
           },
-          '-=0.3',
+          '-=0.5',
         )
         .from(
           '.develop-home__row--bottom .develop-home__card',
           {
             opacity: 0,
-            y: 28,
-            duration: 0.7,
-            stagger: 0.12,
+            y: 40,
+            filter: 'blur(10px)',
+            duration: 0.95,
+            stagger: 0.16,
           },
-          '-=0.4',
+          '-=0.62',
         );
     }, this.developSection.nativeElement);
   }

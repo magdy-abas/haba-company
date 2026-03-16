@@ -53,21 +53,21 @@ export class SynergyHomeComponent implements AfterViewInit, OnDestroy {
       });
 
       timeline
-        .from('.synergy-home__inner', {
+        .from('.synergy-home__background', {
           opacity: 0,
-          y: 24,
-          duration: 0.9,
+          yPercent: 14,
+          duration: 1,
         })
         .from(
           '.synergy-home__line',
           {
             opacity: 0,
-            y: 24,
+            y: 28,
             filter: 'blur(8px)',
-            duration: 0.85,
+            duration: 0.8,
             stagger: 0.14,
           },
-          '-=0.45',
+          '-=0.3',
         );
     }, this.synergySection.nativeElement);
   }
