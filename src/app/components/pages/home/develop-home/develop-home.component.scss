@@ -307,7 +307,7 @@
 
 @media (max-width: 768px) {
   .develop-home {
-    padding: calc(var(--section-spacing) * 0.8) 0;
+    padding: 0 0 calc(var(--section-spacing) * 0.8);
   }
 
   .develop-home__cube {
