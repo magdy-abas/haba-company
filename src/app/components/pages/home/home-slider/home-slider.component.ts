@@ -1,4 +1,4 @@
-import { isPlatformBrowser, NgFor, NgIf } from '@angular/common';
+import { isPlatformBrowser, NgFor } from '@angular/common';
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
@@ -22,7 +22,7 @@ type SliderService = {
 @Component({
   selector: 'app-home-slider',
   standalone: true,
-  imports: [NgFor, NgIf, RouterLink],
+  imports: [NgFor, RouterLink],
   templateUrl: './home-slider.component.html',
   styleUrl: './home-slider.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
