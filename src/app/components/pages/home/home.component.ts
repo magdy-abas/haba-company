@@ -7,6 +7,7 @@ import { TransformHomeComponent } from './transform-home/transform-home.componen
 import { NavbarComponent } from './navbar/navbar.component';
 import { HeroComponent } from './hero/hero.component';
 import { HomeSliderComponent } from './home-slider/home-slider.component';
+import { HowWorkHomeComponent } from './how-work-home/how-work-home.component';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -16,6 +17,7 @@ import { HomeSliderComponent } from './home-slider/home-slider.component';
     HomeSliderComponent,
     AboutHomeComponent,
     TransformHomeComponent,
+    HowWorkHomeComponent,
     PhilosophyHomeComponent,
     SynergyHomeComponent,
     DevelopHomeComponent,

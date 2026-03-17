@@ -1,0 +1,31 @@
+<section
+  class="how-work-home"
+  #howWorkSection
+  [style.--title-glow-image]="'url(' + content.titleGlowImage + ')'"
+  [style.--center-glow-image]="'url(' + content.centerGlowImage + ')'"
+  [style.--grid-image]="'url(' + content.gridImage + ')'"
+>
+  <div class="how-work-home__inner">
+    <header class="how-work-home__title-area">
+      <h2 class="how-work-home__title">{{ content.title }}</h2>
+      <p class="how-work-home__subtitle">{{ content.subtitle }}</p>
+    </header>
+
+    <div class="how-work-home__grid">
+      <article
+        class="how-work-home__step"
+        *ngFor="let step of steps"
+        [class.how-work-home__step--right]="step.side === 'right'"
+        [class.how-work-home__step--left]="step.side === 'left'"
+      >
+        <div class="how-work-home__icon-box">
+          <img class="how-work-home__icon" [src]="step.icon" alt="" />
+        </div>
+        <h3 class="how-work-home__step-title">{{ step.title }}</h3>
+        <p class="how-work-home__step-description">{{ step.description }}</p>
+      </article>
+
+      <div class="how-work-home__center-glow" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
