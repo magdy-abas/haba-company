@@ -1,0 +1,62 @@
+<form class="contact-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label class="contact-form__field">
+    <span class="contact-form__label">الاسم</span>
+    <div class="contact-form__control">
+      <input type="text" formControlName="name" placeholder="الاسم الكامل" />
+      <span class="contact-form__icon" aria-hidden="true">
+        <i class="fa-regular fa-user"></i>
+      </span>
+    </div>
+  </label>
+
+  <label class="contact-form__field">
+    <span class="contact-form__label">البريد الإلكتروني</span>
+    <div class="contact-form__control">
+      <input
+        type="email"
+        formControlName="email"
+        placeholder="البريد الإلكتروني"
+      />
+      <span class="contact-form__icon" aria-hidden="true">
+        <i class="fa-regular fa-envelope"></i>
+      </span>
+    </div>
+  </label>
+
+  <label class="contact-form__field">
+    <span class="contact-form__label">الهاتف</span>
+    <div class="contact-form__control">
+      <input
+        type="tel"
+        class="contact-form__input--phone"
+        formControlName="phone"
+        placeholder="رقم الجوال"
+      />
+      <span class="contact-form__icon" aria-hidden="true">
+        <i class="fa-solid fa-phone"></i>
+      </span>
+    </div>
+  </label>
+
+  <label class="contact-form__field">
+    <span class="contact-form__label">اسم الشركة</span>
+    <div class="contact-form__control">
+      <input type="text" formControlName="company" placeholder="اسم الشركة" />
+      <span class="contact-form__icon" aria-hidden="true">
+        <i class="fa-regular fa-building"></i>
+      </span>
+    </div>
+  </label>
+
+  <label class="contact-form__field">
+    <span class="contact-form__label">ملاحظات إضافية (اختياري)</span>
+    <div class="contact-form__control contact-form__control--textarea">
+      <textarea formControlName="notes" rows="4"></textarea>
+      <span class="contact-form__icon" aria-hidden="true">
+        <i class="fa-regular fa-pen-to-square"></i>
+      </span>
+    </div>
+  </label>
+
+  <button class="contact-form__submit" type="submit">{{ submitLabel }}</button>
+</form>

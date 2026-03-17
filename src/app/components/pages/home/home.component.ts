@@ -9,6 +9,8 @@ import { HeroComponent } from './hero/hero.component';
 import { HomeSliderComponent } from './home-slider/home-slider.component';
 import { HowWorkHomeComponent } from './how-work-home/how-work-home.component';
 import { ClientsHomeComponent } from './clients-home/clients-home.component';
+import { ContactHomeComponent } from './contact-home/contact-home.component';
+import { SiteFooterComponent } from '../../shared/site-footer/site-footer.component';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -20,6 +22,8 @@ import { ClientsHomeComponent } from './clients-home/clients-home.component';
     TransformHomeComponent,
     HowWorkHomeComponent,
     ClientsHomeComponent,
+    ContactHomeComponent,
+    SiteFooterComponent,
     PhilosophyHomeComponent,
     SynergyHomeComponent,
     DevelopHomeComponent,

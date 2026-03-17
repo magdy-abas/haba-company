@@ -1,0 +1,19 @@
+<section
+  class="contact-home"
+  #contactSection
+  [style.--contact-bg]="'url(' + content.backgroundImage + ')'"
+>
+  <div class="contact-home__backdrop" aria-hidden="true"></div>
+  <div class="contact-home__beam" aria-hidden="true"></div>
+
+  <div class="contact-home__inner">
+    <div class="contact-home__copy">
+      <h2 class="contact-home__title">{{ content.title }}</h2>
+      <p class="contact-home__subtitle">{{ content.subtitle }}</p>
+    </div>
+
+    <div class="contact-home__form-shell">
+      <app-contact-form (formSubmit)="onFormSubmit($event)"></app-contact-form>
+    </div>
+  </div>
+</section>
