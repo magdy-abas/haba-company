@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HeroComponent } from './hero/hero.component';
 import { HomeSliderComponent } from './home-slider/home-slider.component';
 import { HowWorkHomeComponent } from './how-work-home/how-work-home.component';
+import { ClientsHomeComponent } from './clients-home/clients-home.component';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -18,6 +19,7 @@ import { HowWorkHomeComponent } from './how-work-home/how-work-home.component';
     AboutHomeComponent,
     TransformHomeComponent,
     HowWorkHomeComponent,
+    ClientsHomeComponent,
     PhilosophyHomeComponent,
     SynergyHomeComponent,
     DevelopHomeComponent,

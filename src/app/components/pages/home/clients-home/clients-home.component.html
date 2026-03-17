@@ -1,0 +1,27 @@
+<section
+  class="clients-home"
+  #clientsSection
+  [style.--clients-bg]="'url(' + content.bgImage + ')'"
+  [style.--clients-bottom-bg]="'url(' + content.bottomArrowsImage + ')'"
+>
+  <div class="clients-home__inner">
+    <header class="clients-home__heading">
+      <h2 class="clients-home__title">{{ content.title }}</h2>
+      <p class="clients-home__subtitle">{{ content.subtitle }}</p>
+    </header>
+
+    <div class="clients-home__track">
+      <div class="clients-home__curve-line" aria-hidden="true"></div>
+
+      <div class="clients-home__logos">
+        <article class="clients-home__logo" *ngFor="let client of clients">
+          <img [src]="client.logo" [alt]="client.name" />
+        </article>
+      </div>
+
+      <div class="clients-home__count">{{ content.total }}</div>
+    </div>
+  </div>
+
+  <div class="clients-home__bottom-arrows" aria-hidden="true"></div>
+</section>
