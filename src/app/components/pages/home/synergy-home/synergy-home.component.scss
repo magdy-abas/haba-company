@@ -43,6 +43,8 @@
   background-repeat: no-repeat;
   background-size: auto, auto, auto, cover;
   z-index: 0;
+  transform-origin: 50% 50%;
+  will-change: transform;
 }
 
 .synergy-home__title {
@@ -54,10 +56,28 @@
   line-height: 1.5;
   font-weight: 700;
   font-style: normal;
+  transform-origin: 50% 50%;
+  will-change: transform;
 }
 
 .synergy-home__line {
   display: block;
+}
+
+@media (min-width: 769px) {
+  .synergy-home {
+    padding: 0;
+    min-height: 280vh;
+  }
+
+  .synergy-home__inner {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    min-height: 100vh;
+    transform-style: preserve-3d;
+    padding: 0 max(16px, calc((100vw - var(--section-width)) / 2));
+  }
 }
 
 @media (max-width: 768px) {

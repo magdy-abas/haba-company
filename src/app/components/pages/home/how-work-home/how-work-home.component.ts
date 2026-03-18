@@ -23,6 +23,7 @@ export class HowWorkHomeComponent implements AfterViewInit, OnDestroy {
   private howWorkSection!: ElementRef<HTMLElement>;
 
   private animationContext?: gsap.Context;
+  private mouseCleanup?: () => void;
 
   readonly content = {
     title: 'كـــــــيف نعــــمل',
@@ -73,6 +74,10 @@ export class HowWorkHomeComponent implements AfterViewInit, OnDestroy {
     gsap.registerPlugin(ScrollTrigger);
 
     this.animationContext = gsap.context(() => {
+      const sectionEl = this.howWorkSection.nativeElement;
+      const centerShell = sectionEl.querySelector(
+        '.how-work-home__center-shell',
+      ) as HTMLElement | null;
       const isMobile = window.matchMedia('(max-width: 770px)').matches;
 
       gsap.set('.how-work-home__title-area', {
@@ -174,10 +179,76 @@ export class HowWorkHomeComponent implements AfterViewInit, OnDestroy {
         },
         '-=0.72',
       );
+
+      if (
+        !isMobile &&
+        centerShell &&
+        window.matchMedia('(hover: hover) and (pointer: fine)').matches
+      ) {
+        const rotateXTo = gsap.quickTo(centerShell, 'rotateX', {
+          duration: 0.45,
+          ease: 'power3.out',
+        });
+        const rotateYTo = gsap.quickTo(centerShell, 'rotateY', {
+          duration: 0.45,
+          ease: 'power3.out',
+        });
+        const xTo = gsap.quickTo(centerShell, 'x', {
+          duration: 0.45,
+          ease: 'power3.out',
+        });
+        const yTo = gsap.quickTo(centerShell, 'y', {
+          duration: 0.45,
+          ease: 'power3.out',
+        });
+
+        const onPointerMove = (event: PointerEvent) => {
+          const rect = centerShell.getBoundingClientRect();
+          const relX = (event.clientX - rect.left) / rect.width;
+          const relY = (event.clientY - rect.top) / rect.height;
+          const nx = relX * 2 - 1;
+          const ny = relY * 2 - 1;
+
+          rotateYTo(nx * 18);
+          rotateXTo(-ny * 16);
+          xTo(nx * 8);
+          yTo(ny * 6);
+
+          gsap.to(centerShell, {
+            scale: 1.08,
+            duration: 0.22,
+            ease: 'power2.out',
+            overwrite: true,
+          });
+        };
+
+        const onPointerLeave = () => {
+          rotateYTo(0);
+          rotateXTo(0);
+          xTo(0);
+          yTo(0);
+          gsap.to(centerShell, {
+            scale: 1,
+            duration: 0.5,
+            ease: 'power3.out',
+            overwrite: true,
+          });
+        };
+
+        centerShell.addEventListener('pointermove', onPointerMove);
+        centerShell.addEventListener('pointerleave', onPointerLeave);
+
+        this.mouseCleanup = () => {
+          centerShell.removeEventListener('pointermove', onPointerMove);
+          centerShell.removeEventListener('pointerleave', onPointerLeave);
+        };
+      }
     }, this.howWorkSection.nativeElement);
   }
 
   ngOnDestroy() {
+    this.mouseCleanup?.();
+    this.mouseCleanup = undefined;
     this.animationContext?.revert();
   }
 }
