@@ -29,18 +29,35 @@ export class AppComponent implements AfterViewInit {
       return;
     }
 
-    this.lenis = new Lenis({
-      autoRaf: false,
-      smoothWheel: true,
-      syncTouch: true,
-      syncTouchLerp: 0.08,
-      touchInertiaExponent: 1.4,
-      duration: 1.2,
-      lerp: 0.08,
-      wheelMultiplier: 1.1,
-      touchMultiplier: 1.15,
-      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    });
+    const isCoarsePointer = window.matchMedia(
+      '(hover: none), (pointer: coarse)'
+    ).matches;
+
+    this.lenis = new Lenis(
+      isCoarsePointer
+        ? {
+            autoRaf: false,
+            smoothWheel: true,
+            syncTouch: false,
+            duration: 0.9,
+            lerp: 0.12,
+            wheelMultiplier: 1,
+            touchMultiplier: 1,
+            easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          }
+        : {
+            autoRaf: false,
+            smoothWheel: true,
+            syncTouch: true,
+            syncTouchLerp: 0.08,
+            touchInertiaExponent: 1.4,
+            duration: 1.2,
+            lerp: 0.08,
+            wheelMultiplier: 1.1,
+            touchMultiplier: 1.15,
+            easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          }
+    );
 
     const raf = (time: number) => {
       this.lenis?.raf(time);

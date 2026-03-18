@@ -43,7 +43,8 @@
   background-size: cover;
   filter: grayscale(100%);
   opacity: var(--clients-top-opacity);
-  transform: translateY(var(--clients-top-shift)) scale(var(--clients-top-scale));
+  transform: translateY(var(--clients-top-shift))
+    scale(var(--clients-top-scale));
   transform-origin: center top;
 
   -webkit-mask-image: radial-gradient(
@@ -268,11 +269,5 @@
   .clients-home__bottom-arrows {
     height: clamp(130px, 34vw, 210px);
     --clients-bottom-opacity: 0.36;
-  }
-}
-
-@media (max-width: 992px) {
-  .clients-home {
-    display: none;
   }
 }
