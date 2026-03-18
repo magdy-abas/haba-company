@@ -1,26 +1,31 @@
-﻿<section
-  class="philosophy-home"
-  #philosophySection
-  [style.--grid-image]="'url(' + content.gridImage + ')'"
-  [style.--person-image]="'url(' + content.personImage + ')'"
->
+<section class="philosophy-home" #philosophySection>
+  <video
+    #sectionVideo
+    class="philosophy-home__video"
+    [src]="content.videoSrc"
+    autoplay
+    muted
+    loop
+    playsinline
+    webkit-playsinline="true"
+    preload="metadata"
+  ></video>
+
+  <div class="philosophy-home__overlay" aria-hidden="true"></div>
+
   <div class="philosophy-home__inner">
-    <div class="philosophy-home__card">
-      <div class="philosophy-home__content">
-        <h2 class="philosophy-home__title">{{ content.title }}</h2>
-        <p class="philosophy-home__description">
-          {{ content.description }}
-        </p>
+    <header class="philosophy-home__heading">
+      <h2 class="philosophy-home__title">{{ content.title }}</h2>
+      <p class="philosophy-home__description">{{ content.description }}</p>
+    </header>
 
-        <div class="philosophy-home__list">
-          <article class="philosophy-home__item" *ngFor="let pillar of pillars">
-            <img class="philosophy-home__item-icon" [src]="pillar.icon" alt="" />
-            <h3 class="philosophy-home__item-title">{{ pillar.title }}</h3>
-          </article>
+    <div class="philosophy-home__list">
+      <article class="philosophy-home__item" *ngFor="let pillar of pillars">
+        <div class="philosophy-home__item-icon-wrap">
+          <img class="philosophy-home__item-icon" [src]="pillar.icon" alt="" />
         </div>
-      </div>
+        <h3 class="philosophy-home__item-title">{{ pillar.title }}</h3>
+      </article>
     </div>
-
-    <div class="philosophy-home__tail" aria-hidden="true"></div>
   </div>
 </section>
