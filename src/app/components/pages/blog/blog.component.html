@@ -4,7 +4,7 @@
   <div class="blog-hero__backdrop" aria-hidden="true"></div>
 
   <div class="blog-hero__inner">
-    <header class="blog-hero__heading">
+    <header #heroHeading class="blog-hero__heading" [class.is-visible]="heroVisible">
       <h1 class="blog-hero__title">
         <span class="blog-hero__title-arrow" aria-hidden="true">
           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
@@ -22,8 +22,8 @@
 
 <section class="blog-cards">
   <div class="blog-cards__inner">
-    <div class="blog-grid">
-      <article class="blog-card" *ngFor="let post of posts">
+    <div #cardsSection class="blog-grid">
+      <article class="blog-card" [class.is-visible]="cardsVisible" [style.--card-index]="i" *ngFor="let post of posts; let i = index">
         <div class="blog-card__image-wrap">
           <img class="blog-card__image" [src]="post.image" [alt]="post.title" />
         </div>

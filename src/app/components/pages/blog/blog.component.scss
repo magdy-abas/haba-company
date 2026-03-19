@@ -84,6 +84,14 @@
   margin: 0 auto;
   padding: clamp(86px, 10vw, 140px) 0 clamp(130px, 15vw, 220px);
   text-align: center;
+  opacity: 0;
+  transform: translateY(26px) scale(0.985);
+  filter: blur(8px);
+  will-change: opacity, transform, filter;
+}
+
+.blog-hero__heading.is-visible {
+  animation: blogHeadingReveal 1.45s cubic-bezier(0.16, 0.84, 0.24, 1) both;
 }
 
 .blog-hero__title {
@@ -142,6 +150,15 @@
     border-color 0.34s ease,
     box-shadow 0.34s ease;
   cursor: pointer;
+  opacity: 0;
+  transform: translateY(34px) scale(0.975);
+  filter: blur(8px);
+  will-change: opacity, transform, filter;
+}
+
+.blog-card.is-visible {
+  animation: blogCardReveal 1.18s cubic-bezier(0.18, 0.82, 0.24, 1) both;
+  animation-delay: calc(var(--card-index, 0) * 220ms);
 }
 
 .blog-card__image-wrap {
@@ -189,6 +206,11 @@
     box-shadow 0.3s ease;
 }
 
+.blog-card__arrow svg {
+  transform-origin: center;
+  transition: transform 0.8s cubic-bezier(0.16, 0.84, 0.24, 1);
+}
+
 .blog-card__arrow:hover {
   transform: translateY(-2px);
   background: #fff;
@@ -206,6 +228,10 @@
 .blog-card:hover .blog-card__arrow {
   transform: translateY(-2px) translateX(-4px);
   box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.12);
+}
+
+.blog-card:hover .blog-card__arrow svg {
+  transform: rotate(135deg);
 }
 
 .blog-card:active {
@@ -287,6 +313,10 @@
     min-height: 84px;
     padding: 10px 10px 12px;
   }
+
+  .blog-card.is-visible {
+    animation-delay: calc(var(--card-index, 0) * 170ms);
+  }
 }
 
 @keyframes blogHeroBackdropDrift {
@@ -344,5 +374,34 @@
   100% {
     transform: rotate(360deg) scale(1);
     opacity: 0.5;
+  }
+}
+
+@keyframes blogHeadingReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(26px) scale(0.985);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes blogCardReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(34px) scale(0.975);
+    filter: blur(8px);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
   }
 }
