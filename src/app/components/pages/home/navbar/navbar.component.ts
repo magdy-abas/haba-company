@@ -1,11 +1,12 @@
 ﻿import { NgFor } from '@angular/common';
 import { Component, TemplateRef } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { NgbOffcanvas, NgbOffcanvasModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [NgbOffcanvasModule, NgFor],
+  imports: [NgbOffcanvasModule, NgFor, RouterLink],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
 })
@@ -17,11 +18,11 @@ export class NavbarComponent {
   };
 
   readonly menu = [
-    { title: 'الرئيسية', link: '#' },
-    { title: 'من نحن', link: '#' },
-    { title: 'خدماتنا', link: '#' },
-    { title: 'المدونة', link: '#' },
-    { title: 'تواصل معنا', link: '#' },
+    { title: 'الرئيسية', link: '/' },
+    { title: 'من نحن', link: '/about' },
+    { title: 'خدماتنا', link: '/services' },
+    { title: 'المدونة', link: '/blog' },
+    { title: 'تواصل معنا', link: '/contact' },
   ];
 
   constructor(private offcanvas: NgbOffcanvas) {}

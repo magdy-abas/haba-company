@@ -1,1 +1,40 @@
-<p>contact works!</p>
+<app-navbar></app-navbar>
+
+<section
+  class="contact-us"
+  #contactSection
+  [style.--contact-bg]="'url(' + content.backgroundImage + ')'"
+>
+  <div class="contact-us__backdrop" aria-hidden="true"></div>
+  <div class="contact-us__beam" aria-hidden="true"></div>
+
+  <img
+    class="contact-us__shape"
+    [src]="content.shapeImage"
+    alt=""
+    aria-hidden="true"
+  />
+
+  <div class="contact-us__inner">
+    <div class="contact-us__copy">
+      <h1 class="contact-us__title">
+        <ng-container *ngFor="let word of titleWords; let last = last">
+          <span class="contact-us__title-word">{{ word }}</span>
+          <span *ngIf="!last">&nbsp;</span>
+        </ng-container>
+      </h1>
+      <p class="contact-us__subtitle">
+        <ng-container *ngFor="let word of subtitleWords; let last = last">
+          <span class="contact-us__subtitle-word">{{ word }}</span>
+          <span *ngIf="!last">&nbsp;</span>
+        </ng-container>
+      </p>
+    </div>
+
+    <div class="contact-us__form-shell">
+      <app-contact-form (formSubmit)="onFormSubmit($event)"></app-contact-form>
+    </div>
+  </div>
+</section>
+
+<app-site-footer></app-site-footer>
