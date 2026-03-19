@@ -1,1 +1,54 @@
-<p>blog works!</p>
+﻿<app-navbar></app-navbar>
+
+<section class="blog-hero" [style.--blog-bg]="'url(' + content.backgroundImage + ')'">
+  <div class="blog-hero__backdrop" aria-hidden="true"></div>
+
+  <div class="blog-hero__inner">
+    <header class="blog-hero__heading">
+      <h1 class="blog-hero__title">
+        <span class="blog-hero__title-arrow" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+            <path
+              d="M28.5 1.5L28.5 13.9615C28.5 15.614 27.8435 17.1989 26.675 18.3674C25.5066 19.5359 23.9217 20.1923 22.2692 20.1923L1.5 20.1923M1.5 20.1923L9.80769 11.8846M1.5 20.1923L9.80769 28.5"
+              stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+        <span class="blog-hero__title-text">{{ content.title }}</span>
+      </h1>
+      <p class="blog-hero__subtitle">{{ content.subtitle }}</p>
+    </header>
+  </div>
+</section>
+
+<section class="blog-cards">
+  <div class="blog-cards__inner">
+    <div class="blog-grid">
+      <article class="blog-card" *ngFor="let post of posts">
+        <div class="blog-card__image-wrap">
+          <img class="blog-card__image" [src]="post.image" [alt]="post.title" />
+        </div>
+
+        <div class="blog-card__body">
+          <div class="blog-card__copy">
+            <h3 class="blog-card__title">{{ post.title }}</h3>
+            <p class="blog-card__excerpt">{{ post.excerpt }}</p>
+          </div>
+
+          <a class="blog-card__arrow" href="#" aria-label="عرض المقال">
+            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+              <path opacity="0.5"
+                d="M22.095 23.1594C22.2356 23.3001 22.4264 23.3791 22.6253 23.3791C22.8242 23.3791 23.015 23.3001 23.1556 23.1594C23.2963 23.0188 23.3753 22.828 23.3753 22.6291C23.3753 22.4302 23.2963 22.2394 23.1556 22.0988L22.095 23.1594ZM23.1556 22.0988L11.8419 10.785L10.7812 11.8457L22.095 23.1594L23.1556 22.0988Z"
+                fill="black" />
+              <path d="M19.7982 11.314H11.313V19.7993" stroke="black" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<app-clients-home></app-clients-home>
+<app-contact-home></app-contact-home>
+<app-site-footer></app-site-footer>
