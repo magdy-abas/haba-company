@@ -37,9 +37,9 @@ export class BlogComponent implements AfterViewInit, OnDestroy {
   cardsVisible = false;
 
   readonly content = {
-    title: 'المدونة',
+    title: 'المـــــــــــــــــدونة',
     subtitle:
-      'مقالات ورؤى عملية حول تطوير نموذج العمل، تنظيم الإيرادات، وبناء أنظمة نمو قابلة للتوسع للشركات الطموحة.',
+      'مقالات ورؤى عملية حول تطوير نموذج العمل، تعظيم الإيرادات، وبناء أنظمة نمو قابلة للتوسع للشركات الطموحة.',
     backgroundImage: 'assets/images/blog-bg.png',
   };
 
@@ -56,7 +56,8 @@ export class BlogComponent implements AfterViewInit, OnDestroy {
     },
     {
       title: 'كيف تبني منظومة نمو لشركتك',
-      excerpt: 'خطوات عملية لتحويل النمو من مجهود يومي إلى نظام واضح قابل للتوسع.',
+      excerpt:
+        'خطوات عملية لتحويل النمو من مجهود يومي إلى نظام واضح قابل للتوسع.',
       image: 'assets/images/blog-img-3.png',
     },
     {
@@ -108,7 +109,7 @@ export class BlogComponent implements AfterViewInit, OnDestroy {
       {
         threshold: 0.22,
         rootMargin: '0px 0px -10% 0px',
-      }
+      },
     );
 
     if (this.heroHeading?.nativeElement) {
